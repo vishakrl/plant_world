@@ -70,12 +70,48 @@
                         <div class="limit-box">
                            <nav class="main-menu">
                               <ul class="menu-area-main">
-                                 <li class="active"> <a href="#">Home</a> </li>
+                                 <li class="last"><a href="#"><img src="{% static 'images/search_icon.png' %}" alt="icon"/></a></li>
+                                 
                                  <li> <a href="#about">About</a> </li>
                                  <li><a href="#plant">Plant</a></li>
                                  <li><a href="#gallery">Gallery</a></li>
-                                 <li><a href="#contact">Contact Us</a></li>
-                                 <li class="last"><a href="#"><img src="{% static 'images/search_icon.png' %}" alt="icon"/></a></li>
+                                 {% if user.is_authenticated %}
+                                 <li><a href="#contact">{{user.username}}</a></li>
+                                 
+                                 
+                                 
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="logout/">logout</a>
+                                  </li>
+                                  {% else %}
+                                 <li class="nav-item">
+
+                                    <a class="nav-link" href="login/">Login</a>
+                                 </li>
+                                
+                                
+                                 <li class="nav-item">
+                                    <a class="nav-item" href="register/">Register</a>
+                                 {% endif %}
+                                 </li>
+                                    
+
+                                    
+                                    
+                                    
+                                        
+                                 
+
+                                 
+
+
+                                  
+                                    
+                                    
+                                
+                                 
+                              
+                                 
                               </ul>
                            </nav>
                         </div>
@@ -100,15 +136,16 @@
                      <div class="row marginii">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="carousel-caption ">
-                              <h1>Welcome To The <strong class="color">Nutrients Plants</strong></h1>
-                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                              <h1>Welcome To The <strong class="color">Plants Worlds</strong></h1>
+                              <p>A plant comprises more than 95% water; every tree we find around us was once a plant many years ago. br
+                                 It's no surprise that they provide sustenance to living beings; without plants, it would be impossible to have a life on earth.</p>
                               <a class="btn btn-lg btn-primary" href="#" role="button">About</a>
                               <a class="btn btn-lg btn-primary" href="#" role="button">Contact US</a>
                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="img-box">
-                              <figure><img src="{% static 'images/gyufyufyu.png' %}" alt="img"/></figure>
+                              <figure><img src="{% static 'images\plant hand.jpg' %}" alt="img"/></figure>
                            </div>
                         </div>
                      </div>
@@ -120,14 +157,15 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="carousel-caption ">
                               <h1>Welcome To The <strong class="color">Nutrients Plants</strong></h1>
-                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                              <p>A plant comprises more than 95% water; every tree we find around us was once a plant many years ago. <br>
+                                  It's no surprise that they provide sustenance to living beings; without plants, it would be impossible to have a life on earth.</p>
                               <a class="btn btn-lg btn-primary" href="#" role="button">About</a>
                               <a class="btn btn-lg btn-primary" href="#" role="button">Contact US</a>
                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="img-box ">
-                              <figure><img src="{% static 'images/banner.jpg' %}" alt="img"/></figure>
+                              <figure><img src="{% static 'images\1251026.jpg' %}" alt="img"/></figure>
                            </div>
                         </div>
                      </div>
@@ -139,14 +177,15 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="carousel-caption ">
                               <h1>Welcome To The <strong class="color">Nutrients Plants</strong></h1>
-                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                              <p>A plant comprises more than 95% water; every tree we find around us was once a plant many years ago. br 
+                                 It's no surprise that they provide sustenance to living beings; without plants, it would be impossible to have a life on earth.</p>
                               <a class="btn btn-lg btn-primary" href="#" role="button">About</a>
                               <a class="btn btn-lg btn-primary" href="#" role="button">Contact US</a>
                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                            <div class="img-box">
-                              <figure><img src="{% static 'images/gyufyufyu.png' %}" alt="img"/></figure>
+                              <figure><img src="{% static 'images\pexels-markus-spiske-113335.jpg' %}" alt="img"/></figure>
                            </div>
                         </div>
                      </div>
@@ -167,7 +206,7 @@
                <div class="col-md-12 ">
                   <div class="titlepage">
                      <h2>Our Wonderful plants</h2>
-                     <span>looking at its layout. The point of using Lorem Ipsumletters, as opposed to usingl</span>
+                     <span>A beautiful plant is like having a friend around the house</span>
                   </div>
                </div>
             </div>
@@ -176,44 +215,55 @@
             <div class="row">
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="{% static 'images/plant1.jpg' %}" alt="img"/></figure>
-                     <h3> Floral Vibrant</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page   when looking at its layout. The point of using Lorem Ipsumletters, as opposed to using</p>
+                     <figure><img src="{% static 'images/plant sunflower.jpg' %}" alt="img"/></figure>
+                     <h3>Sunflower</h3>
+                     <p>The 'flower' of the common sunflower is actually a pseudanthium, or flowerhead, made up of many small flowers.
+                        The outer yellow 'petals' on the flowerhead are known as ray flowers and are made up of multiple petals fused together.
+                         Ray petals are usually yellow but can sometimes be red or orange.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="{% static 'images/plant2.jpg' %}" alt="img"/></figure>
-                     <h3> Floral Vibrant</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page   when looking at its layout. The point of using Lorem Ipsumletters, as opposed to using</p>
+                     <figure><img src="{% static 'images\pexels-fox-750829.jpg' %}" alt="img"/></figure>
+                     <h3>Rose</h3>
+                     <p>Roses are the epitome of beauty, from their dazzling color combinations and their sweet scent to their rows of delicate petals.
+                         They make a stunning addition to a garden or gift — these quotes about roses and beauty are a great way to show someone that you honor their inner and outer radiance.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="{% static 'images/plant3.jpg' %}" alt="img"/></figure>
-                     <h3> Floral Vibrant</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page   when looking at its layout. The point of using Lorem Ipsumletters, as opposed to using</p>
+                     <figure><img src="{% static 'images\african violet (1).jpg' %}" alt="img"/></figure>
+                     <h3>African violet</h3>
+                     <p>African violets are perhaps the most popular flowering houseplants grown in the world today. 
+                        There are many reasons for this: The plants generally flower the year round, giving an almost continuous display of blooms. 
+                        They require the same temperatures humans find comfortable, making them easy to raise in our homes.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="{% static 'images/plant1.jpg' %}" alt="img"/></figure>
-                     <h3> Floral Vibrant</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page   when looking at its layout. The point of using Lorem Ipsumletters, as opposed to using</p>
+                     <figure><img src="{% static 'images/lavender1.jpg' %}" alt="img"/></figure>
+                     <h3>Lavender</h3>
+                     <p>Lavender flowers represent purity, silence, devotion, serenity, grace, and calmness. 
+                        Purple is the color of royalty and speaks of elegance, refinement, and luxury, too. 
+                        The color is also associated with the crown chakra, which is the energy center associated with higher purpose and spiritual connectivity.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="{% static 'images/plant2.jpg' %}" alt="img"/></figure>
-                     <h3> Floral Vibrant</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page   when looking at its layout. The point of using Lorem Ipsumletters, as opposed to using</p>
+                     <figure><img src="{% static 'images/lotus.jpg' %}" alt="img"/></figure>
+                     <h3>Lotus</h3>
+                     <p>The lotus was chosen as the national flower because it enjoyed a significant presence in ancient traditions, scriptures and mythology.
+                         The Bhagavad Gita considers it a metaphor for detachment:
+                         Just as the lotus remains untouched by the muddy waters in which it grows, human beings should rise above worldly attachments.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="{% static 'images/plant3.jpg' %}" alt="img"/></figure>
-                     <h3> Floral Vibrant</h3>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page   when looking at its layout. The point of using Lorem Ipsumletters, as opposed to using</p>
+                     <figure><img src="{% static 'images/orchid (1).jpg' %}" alt="img"/></figure>
+                     <h3>Orchid</h3>
+                     <p>The scientific name for the orchid is the Orchidaceae. This flower is among one of the largest families of flowering plants.
+                        It is estimated that there are 17,000 to 35,000 different species of orchids.
+                         These types of flowers can grow in all terrestrial ecosystems, with the exception of North and South Pole.</p>
                   </div>
                </div>
             </div>
@@ -265,96 +315,48 @@
          </div>
       </div>
       <!-- end about -->
+      
       <!--Gallery -->
       <div id="gallery" class="Gallery">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage">
-                  <h2>Our Gallery </h2>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Gallery </h2>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
-      <div class="container-fluid margin-r-l">
-         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 thumb">
-               <div class="Gallery-box">
-                  <figure>
-                     <a href="{% static 'images/1.jpg' %}" class="fancybox" rel="ligthbox">
-                     <img  src="{% static 'images/1.jpg' %}" class="zoom img-fluid "  alt="">
-                     </a>
-                     <span class="hoverle">
-                     <a href="{% static 'images/1.jpg' %}" class="fancybox" rel="ligthbox">View</a>
-                     </span>  
-                  </figure>
+         <div class="container-fluid margin-r-l">
+            <div class="row">
+               {% for i in data %}
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 thumb">
+                 
+                  <div class="Gallery-box">
+                     <figure>
+                        <h5>
+                           {{i.name}}
+                        </h5>
+                        <!-- <a  href="{{i.img.url}}" class="fancybox" rel="ligthbox">  -->
+                        <img src="{{i.img.url}}" class="zoom img-fluid "  alt="">
+                        <!-- </a> -->
+                        <span class="hoverle">
+                        <a href="product/?id={{i.id}}" class="fancybox" rel="ligthbox">Buy</a>
+                       
+                        </span>  
+                     </figure>
+                  </div>
+                  
                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 thumb">
-               <div class="Gallery-box">
-                  <figure>
-                     <a href="{% static 'images/2.jpg' %}" class="fancybox" rel="ligthbox">
-                     <img  src="{% static 'images/2.jpg' %}" class="zoom img-fluid "  alt="">
-                     </a>
-                     <span class="hoverle">
-                     <a href="{% static 'images/1.jpg' %}" class="fancybox" rel="ligthbox">View</a>
-                     
-                     
-                     </span>
-                  </figure>
-               </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 thumb">
-               <div class="Gallery-box">
-                  <figure>
-                     <a href="{% static 'images/3.jpg' %}" class="fancybox" rel="ligthbox">
-                     <img  src="{% static 'images/3.jpg' %}" class="zoom img-fluid "  alt="">
-                     </a>
-                     <span class="hoverle">
-                     <a href="{% static 'images/3.jpg' %}" class="fancybox" rel="ligthbox">View</a>
-                     </span>
-                  </figure>
-               </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 thumb">
-               <div class="Gallery-box">
-                  <figure>
-                     <a href="{% static 'images/4.jpg' %}" class="fancybox" rel="ligthbox">
-                     <img  src="{% static 'images/4.jpg' %}" class="zoom img-fluid "  alt="">
-                     </a>
-                     <span class="hoverle">
-                     <a href="{% static 'images/4.jpg' %}" class="fancybox" rel="ligthbox">View</a>
-                     </span> 
-                  </figure>
-               </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 thumb">
-               <div class="Gallery-box">
-                  <figure>
-                     <a href="{% static 'images/5.jpg' %}" class="fancybox" rel="ligthbox">
-                     <img  src="{% static 'images/5.jpg' %}" class="zoom img-fluid "  alt="">
-                     </a>
-                     <span class="hoverle">
-                     <a href="{% static 'images/5.jpg' %}" class="fancybox" rel="ligthbox">View</a>
-                     </span> 
-                  </figure>
-               </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-               <div class="Gallery-box">
-                  <figure>
-                     <a href="{% static 'images/6.jpg' %}" class="fancybox" rel="ligthbox">
-                     <img  src="{% static 'images/6.jpg' %}" class="zoom img-fluid "  alt="">
-                     </a>
-                     <span class="hoverle">
-                     <a href="{% static 'images/6.jpg' %}" class="fancybox" rel="ligthbox">View</a>
-                     </span>
-                  </figure>
-               </div>
+               {% endfor %}
+               
+              
+               
+              
+             
             </div>
          </div>
-      </div>
-      <!-- end Gallery -->
+         <!-- end Gallery -->
       <!--contact -->
       <div id="contact" class="contact">
          <div class="container">
@@ -399,9 +401,9 @@
                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 paddimg-left">
                   <div class="Nursery-img">
                      <figure>
-                        <img src="{% static 'images/contactimg.jpg' %}" alt="img"/>
+                        <img src="{% static 'images/D:\sample project\Plant_World\static\images\pexels-jatuphon-buraphon-348689.jpg' %}" alt="img"/>
                         <div class="text-box">
-                           <h3>Best Green Nursery</h3>
+                          <h3 style="color: rgba(0, 128, 0, 0.751);">Best Green Nursery</h3>
                         </div>
                      </figure>
                   </div>
@@ -443,7 +445,7 @@
             </div>
             <div class="copyright">
                <div class="container">
-                  <p>Copyright 2019 All Rights Reserved Design By  <a href="https://html.design/">Free Html Templates</a></p>
+                  <p style="color: blueviolet;">Copyright 2019 All Rights Reserved Design By  <a href="https://html.design/">Free Html Templates</a></p>
                </div>
             </div>
          </div>

@@ -1073,7 +1073,7 @@ ul.top_icon li a {
 }
 
 
-}
+
 .main-menu ul li:last-child a {
      padding-right: 0;
 }
@@ -1089,11 +1089,11 @@ ul.top_icon li a {
      position: relative;
      border-bottom: solid #eee 1px;
 }
-.main-menu ul>li .sub-down li a::before {}
+
 .main-menu ul>li .sub-down li a:hover {
      color: #111111;
 }
-.main-menu ul>li .sub-down li a:hover::before {}
+
 .main-menu ul li:first-child {
      margin-left: 0;
 }
@@ -1147,7 +1147,7 @@ ul.top_icon li a {
      display: inline-block;
      vertical-align: middle;
 }
-.main-menu ul>li:nth-child (6) {
+.main-menu ul>li:nth-child(6) {
      padding-right: 0px;
 }
 .nav>li {
@@ -1163,7 +1163,7 @@ ul.top_icon li a {
      right: 0;
      padding: 15px 0px;
 }
-.sub-full {}
+
 .simple-down {
      padding: 15px;
 }
@@ -1749,16 +1749,22 @@ input[type="radio"] .styled:checked+label::after {
      margin-bottom: 15px;
      margin-right: -7px;
      margin-left: -7px;
-     position: relative;
+     
+     position:relative;
 }
 .Gallery .Gallery-box figure {
-     margin: 0px;
+     margin: 20px;
+     
 }
 .Gallery .Gallery-box figure img {
-     width: 100%;
+     padding-bottom: 30px;
+     
+
+     
+     
 }
 .green {
-     background-color: #6fb936;
+     background-color: #b3b4b1;
 }
 
 /** gallery section css **/
@@ -1775,6 +1781,7 @@ input[type="radio"] .styled:checked+label::after {
 }
 img.zoom {
      width: 100%;
+     
      object-fit: cover;
      -webkit-transition: all .3s ease-in-out;
      -moz-transition: all .3s ease-in-out;
@@ -1794,7 +1801,7 @@ img.zoom {
      color: #000;
 }
 .modal-footer {
-     display: none;
+     display: flex;
 }
 
 /** end section **/
@@ -1845,7 +1852,8 @@ img.zoom {
      border: #fff solid 2px;
      background: transparent;
      padding: 5px 38px;
-     color: #fff;
+     color: #a42148;
+     
 }
 .contact {
      background: #fff;
