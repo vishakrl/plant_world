@@ -1,17 +1,15 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet"  href="static/css/about.css">
+    <link rel="stylesheet" href="{% static 'css\about.css' %}">
 </head>
-
 <body>
-    <div class="main" >
+    <div class="main">
         <div class="top">
             <div class="head-bar">
                 <a href="">Home</a>
@@ -20,25 +18,127 @@
                 <a href="">Product</a>
 
             </div>
-
-            <div class="top-body">
+            <div class="top-body" style="background-image: url('/static/images/banner.jpg');"> 
+                <!--   -->
                 <center>
-                    <div class="top-mid">
-                        <h1>Plants</h1>
-                        <p>Plants are one of the biggest gifts of god.... We can live on earth due to plants...they
-                            provides us fresh air
-                            Plants are living beings and an important part of nature.
-                            They can make their food by the process of photosynthesis.
-                            Plants are green in colour due to the presence of a pigment called chlorophyll.
-                        </p>
-                    </div>
-                </center>
-            </div>
-        </div>
+                <div class="top-mid" >
+                    <h1>PLANTS</h1>
+                    <p>They can purify the air and help keep us healthy. Some plants can even provide medicine or food when needed. Plants provide a variety of vegetables, fruits, oxygen, and other things and assist in controlling carbon dioxide in the atmosphere. Botany is the study of plants and their species and features.</p>
 
+
+                </div>
+            </center>
+
+            </div>
+
+        </div>
+        <div class="mid">
+            <center>
+            <h1>Products</h1>
+            <p>
+            </p>
+           </center>
+           <center>
+            <div class="inner-mid">
+                
+                <!-- products divs  -->
+                
+                <img src="{{data.img.url}}" alt="">
+                
+                
+                <h2>{{data.name}}</h2>
+                
+                
+                <p>
+                    {{data.desc}}
+                    <h3 style="color: brown;">{{data.price}} /kg</h3></p>
+                 <!-- products end  -->
+                 <h1>
+                    <!-- comment section  -->
+                    <div class="headline">
+                       
+                    <h6>Comments</h6>
+                    
+                </div>
+                
+                
+                    <div class="comment-box">
+                        
+                        {% if   data.cmt.all %}
+                        {% for i in data.cmt.all %}
+                        
+                        <p>
+                            
+                            <b>{{i.msg}}</b>&nbsp;&nbsp;<small>{{i.date}}</small><br>
+                            <small>{{i.user}}</small>&nbsp;
+                            <font>{{i.like}}</font>
+                            <a href="like/"><img src="{% static 'images\like.png.png' %}" alt="" width="15px" height="15px"></a>
+                            <button>k</button>
+                        </p>
+                        {% endfor %}
+                        {% else %}
+                        <h4>No Comments Here</h4>
+                        {% endif %}
+                    </div>
+                    <form action="cmt/" method="GET">
+                    <div class="comment-entry">
+                        <textarea name="cmtmsg" id="" cols="50" rows="2" placeholder="Enter Your Comment" required></textarea><br>
+                        <input name="user" type="hidden" value="{{user.username}}">
+                        <input name="proid" type="hidden" value="{{data.id}}">
+                        <button>Submit</button>
+                    </div>
+                </form>
+                 </h1>
+                 
+
+                 
+
+            </div>
+            
+            </center>
+        </div>
+        <div class="footer">
+            
+            <table>
+                <tr>
+                    <th>About</th>
+                    <th>Social</th>
+                    <th>Service</th>
+                    <th>Activity</th>
+                    
+                </tr>
+                <tr>
+                    <td>News</td>
+                    <td>Facebook</td>
+                    <td>Compare</td>
+                    <td>Give away</td>
+                </tr>
+                <tr>
+                    <td>Teardown</td>
+                    <td>Twitter</td>
+                    <td>Download</td>
+                    <td>Influencers</td>
+                </tr>
+                <tr>
+                    <td>Patterns</td>
+                    <td>YouTube</td>
+                    <td>Feedback</td>
+                    <td>Honor</td>
+
+                </tr>
+                <tr>
+                    <td>Contact Us</td>
+                    <td></td>
+                    <td>Report</td>
+                    <td>Branding</td>
+                </tr>
+                
+                    
+            
+            </table>
+        </div>
 
 
     </div>
 </body>
-
 </html>
